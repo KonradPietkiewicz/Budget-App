@@ -1,4 +1,4 @@
-## Aplikacja do zarządzania budrzetem domowym
+## Aplikacja do zarządzania budżetem domowym
 
 ## HTML CSS JavaScript
 
