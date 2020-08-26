@@ -2,6 +2,8 @@
     --income-color: #55c57a;
     --expense-color: #bb1414;
 
+    --gray-color: #3f3f3f;
+
     --form-background-color: #e2ebf0;
     --balance-background-color: #cfd9df;
 }
@@ -96,6 +98,7 @@ body {
     content: "";
     position: absolute;
     background-color: #fff;
+    transition: transform 0.25s ease-out;
 }
 
 .switch__label:before {
@@ -112,6 +115,74 @@ body {
     width: calc(100% - 2rem);
     height: 0.4rem;
     margin-top: -0.2rem;
+}
+
+.switch__input:checked~.switch__label {
+    background-color: var(--expense-color);
+}
+
+.switch__input:checked~.switch__label:before {
+    transform: rotate(90deg);
+}
+
+.input {
+    display: block;
+    position: relative;
+    padding-right: 2rem;
+}
+
+.input__input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    padding: 1rem 2rem;
+    border-radius: 0.2rem;
+    background-color: rgba(#fff, 05);
+    border: none;
+    width: 15rem;
+    display: block;
+    transition: border-color 0.3s ease-in;
+    border-bottom: 0.3rem solid var(--gray-color);
+}
+
+.input__input:focus {
+    outline: none;
+    border-bottom: .3rem solid var(--income-color);
+}
+
+.input__input::-webkit-input-placeholder {
+    color: #000;
+}
+
+.input__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    position: absolute;
+    top: -2rem;
+    left: 0;
+    transition: opacity 0.3s ease-in, transform 0.3s ease in
+}
+
+.input__input:placeholder-shown+.input__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(4rem);
+}
+
+.button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.button__icon {
+    height: 4rem;
+    width: 4rem;
+    fill: var(--income-color);
+    transition: transform 0.1s ease-in;
+}
+
+.button__icon:hover {
+    transform: translateY(-0.5rem);
 }
 
 @media (min-width: 768px) {
