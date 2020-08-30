@@ -47,7 +47,7 @@
             <label for="value" class="input__label">Value</label>
           </li>
           <li class="inputs__button">
-            <button class="button">
+            <button class="button" data-enter-button>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -66,22 +66,28 @@
         </ul>
       </section>
       <section class="budget__balance">
-        <h2 class="balance__heading">Your budget is 10 zł</h2>
-        <article class="balance__list">
+        <h2 class="balance__heading" data-total-budget>Your budget is 10 zł</h2>
+        <article class="balance__list" data-balance-list>
           <section class="list">
             <h3 class="list__heading">Incomes</h3>
-            <ul class="list__list">
+            <ul class="list__list" data-balance-list-incomes>
               <li class="list__item">
-                <p class="item__description">Wypłata</p>
-                <p class="item__value">3000zł</p>
+                <p class="item__description" data-item-description>Wypłata</p>
+                <p class="item__value" data-item-value>3000zł</p>
                 <div class="item__buttons">
-                  <button class="item__button item__button--edit"></button>
-                  <button class="item__button item__button--delete"></button>
+                  <button
+                    class="item__button item__button--edit"
+                    data-edit-button
+                  ></button>
+                  <button
+                    class="item__button item__button--delete"
+                    data-delete-button
+                  ></button>
                 </div>
               </li>
             </ul>
             <h3 class="list__heading">Expenses</h3>
-            <ul class="list__list">
+            <ul class="list__list" data-balance-list-expenses>
               <li class="list__item">
                 <p class="item__description">Podatki</p>
                 <p class="item__value">2000zł</p>
@@ -97,4 +103,8 @@
     </main>
   </body>
   <script src="./js/index.js"></script>
+  <script>
+    const app = new BudgetApp();
+    app.initializeApp();
+  </script>
 </html>
