@@ -185,8 +185,91 @@ body {
     transform: translateY(-0.5rem);
 }
 
+.list {
+    margin-top: 5rem;
+}
+
+.list__heading {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+}
+
+.list__list {
+    list-style: none;
+}
+
+.list__item {
+    display: flex;
+    width: 30rem;
+    background-color: #fff;
+    padding-left: 1rem;
+    align-items: center;
+    font-size: 1.8rem;
+    margin: .5rem 0;
+}
+
+.list__item:hover {
+    background-color: var(--form-background-color);
+}
+
+.item__description {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.item__value {
+    margin-left: auto;
+}
+
+.item__buttons {
+    display: flex;
+    margin-left: 1rem;
+}
+
+.item__button {
+    height: 3rem;
+    width: 3rem;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    border: none;
+    cursor: pointer;
+}
+
+.item__button--edit {
+    background-image: url('../assets/create-24px.svg');
+}
+
+.item__button--delete {
+    background-image: url('../assets/delete-24px.svg');
+}
+
 @media (min-width: 768px) {
     html {
         font-size: 62.5%;
+    }
+
+    .header {
+        background-color: transparent;
+    }
+
+    .budget {
+        flex-direction: row;
+    }
+
+    .budget__balance {
+        margin: 0;
+    }
+
+    .item__buttons {
+        opacity: 0;
+        transform: translateX(2rem);
+        transition: opacity .1a ease-in, transform 0.1s ease-in;
+    }
+
+    .list__item:hover .item__buttons {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
