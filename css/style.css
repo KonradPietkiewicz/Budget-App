@@ -69,6 +69,14 @@ body {
     font-size: 2.rem;
 }
 
+.balance__heading--positive {
+    color: var(--income-color);
+}
+
+.balance__heading--negative {
+    color: var(--expense-color);
+}
+
 .inputs {
     display: flex;
     list-style: none;
@@ -194,6 +202,14 @@ body {
     margin-bottom: 1rem;
 }
 
+.list__heading--incomes {
+    color: var(--income-color)
+}
+
+.list__heading--expenses {
+    color: var(--expense-color)
+}
+
 .list__list {
     list-style: none;
 }
@@ -222,6 +238,14 @@ body {
     margin-left: auto;
 }
 
+.item__value--income {
+    color: var(--income-color);
+}
+
+.item__value--expense {
+    color: var(--expense-color);
+}
+
 .item__buttons {
     display: flex;
     margin-left: 1rem;
@@ -243,6 +267,16 @@ body {
 
 .item__button--delete {
     background-image: url('../assets/delete-24px.svg');
+}
+
+.error {
+    margin-bottom: 2rem;
+    color: var(--expense-color);
+    font-size: 1.6rem;
+}
+
+.hide {
+    visibility: hidden;
 }
 
 @media (min-width: 768px) {
